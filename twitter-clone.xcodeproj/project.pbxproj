@@ -187,8 +187,8 @@
 		4FF8F9401E58109A001EE4F0 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				4FF8F93D1E58009F001EE4F0 /* LoginViewController.swift */,
 				4FF8F9431E5810D9001EE4F0 /* TweetsViewController.swift */,
+				4FF8F93D1E58009F001EE4F0 /* LoginViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";

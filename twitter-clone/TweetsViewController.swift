@@ -50,5 +50,53 @@ class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         return cell
     }
+    
+    @IBAction func onRetweetButtonTapped(_ sender: Any) {
+        let button = sender as! UIButton
+        let view = button.superview!
+        let cell = view.superview as! TweetTableViewCell
+        let indexPath = tableView.indexPath(for: cell)
+        let tweet = tweets![indexPath!.row]
+        let path = tweet.id
+        let retweeted = tweet.retweeted
+        
+        if retweeted == false {
+            TwitterClient.sharedInstance.retweet(id: path!, params: nil) { (error) -> () in
+                print("Retweeting")
+                self.tweets![indexPath!.row].retweetCount = self.tweets![indexPath!.row].retweetCount! + 1
+                tweet.retweeted = true
+                cell.retweetButton.setImage(UIImage(named: "retweet-action-on-green.png"), for: UIControlState())
+                self.tableView.reloadData()
+            }
+        }
+        
+    }
 
+    @IBAction func onFavoriteButtonTapped(_ sender: Any) {
+        
+    }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -99,6 +99,17 @@ class TwitterClient: BDBOAuth1SessionManager {
         })        
     }
     
+    func retweet(id: Int, params: NSDictionary?, completion: @escaping (_ error: NSError?) -> () ){
+        post("1.1/statuses/retweet/\(id).json", parameters: params, success: { (operation: URLSessionDataTask!, response: Any?) -> Void in
+            print("Retweeted tweet with id: \(id)")
+            completion(nil)
+        }, failure: { (operation: URLSessionDataTask?, error: Error!) -> Void in
+            print("Couldn't retweet: \(error.localizedDescription)")
+            completion(error as NSError?)
+        }
+        )
+    }
+    
 }
 
 

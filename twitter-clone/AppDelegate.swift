@@ -21,7 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             // Go to the logged in screen
             print("Current user exists: \((User.currentUser?.name)!)")
             
-            let tweetsVC = storyboard.instantiateViewController(withIdentifier: "TweetsViewController")
+            let tweetsVC = storyboard.instantiateViewController(withIdentifier: "MainNavController")
             
             window?.rootViewController = tweetsVC
         } else {

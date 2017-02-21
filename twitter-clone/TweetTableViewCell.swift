@@ -18,6 +18,9 @@ class TweetTableViewCell: UITableViewCell {
     @IBOutlet weak var retweetCount: UILabel!
     @IBOutlet weak var favoritesCount: UILabel!
     
+    @IBOutlet weak var retweetButton: UIButton!
+    @IBOutlet weak var favoritesButton: UIButton!
+    
     var tweet: Tweet! {
         didSet {
             userImage.setImageWith((tweet.user?.profileImageURL!)!)
