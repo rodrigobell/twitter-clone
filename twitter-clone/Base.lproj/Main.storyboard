@@ -81,7 +81,7 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="@rodrigodeobell" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="boS-BM-Lyg">
-                                                    <rect key="frame" x="171" y="8" width="114" height="18"/>
+                                                    <rect key="frame" x="168" y="8" width="114" height="18"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <color key="textColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -139,6 +139,7 @@
                                                 <constraint firstAttribute="bottom" secondItem="qGF-Yt-VUv" secondAttribute="bottom" constant="12" id="2SC-Dv-nx2"/>
                                                 <constraint firstItem="F0u-Le-qpb" firstAttribute="leading" secondItem="1bD-Gb-zii" secondAttribute="trailing" constant="8" id="3lS-5R-ZuB"/>
                                                 <constraint firstItem="N6t-57-gSE" firstAttribute="top" secondItem="cqT-NV-nZd" secondAttribute="top" constant="9" id="5Sm-Gn-SAv"/>
+                                                <constraint firstItem="TMb-Yv-57s" firstAttribute="leading" secondItem="1bD-Gb-zii" secondAttribute="trailing" constant="78" id="9v1-go-eMB"/>
                                                 <constraint firstItem="TMb-Yv-57s" firstAttribute="top" relation="greaterThanOrEqual" secondItem="oos-AS-r6d" secondAttribute="bottom" constant="8" id="GgV-qa-7Oh"/>
                                                 <constraint firstAttribute="trailing" secondItem="oos-AS-r6d" secondAttribute="trailing" constant="8" id="HiR-V3-MxY"/>
                                                 <constraint firstItem="EyD-tC-TkY" firstAttribute="top" secondItem="cqT-NV-nZd" secondAttribute="top" constant="8" id="O6l-7B-jM3"/>
@@ -149,9 +150,8 @@
                                                 <constraint firstItem="qGF-Yt-VUv" firstAttribute="leading" secondItem="TMb-Yv-57s" secondAttribute="trailing" constant="10" id="bWj-Hf-nZ5"/>
                                                 <constraint firstAttribute="bottom" secondItem="1bD-Gb-zii" secondAttribute="bottom" constant="8" id="i2y-5L-qiq"/>
                                                 <constraint firstItem="1bD-Gb-zii" firstAttribute="leading" secondItem="oos-AS-r6d" secondAttribute="leading" id="mTU-PI-hJZ"/>
-                                                <constraint firstItem="g4N-h6-Z1g" firstAttribute="leading" secondItem="boS-BM-Lyg" secondAttribute="trailing" constant="5" id="nzZ-0v-E6m"/>
-                                                <constraint firstItem="TMb-Yv-57s" firstAttribute="leading" secondItem="boS-BM-Lyg" secondAttribute="leading" id="o4z-mA-and"/>
-                                                <constraint firstItem="boS-BM-Lyg" firstAttribute="leading" secondItem="EyD-tC-TkY" secondAttribute="trailing" constant="13" id="oML-cQ-EAh"/>
+                                                <constraint firstItem="g4N-h6-Z1g" firstAttribute="leading" secondItem="boS-BM-Lyg" secondAttribute="trailing" constant="8" id="nzZ-0v-E6m"/>
+                                                <constraint firstItem="boS-BM-Lyg" firstAttribute="leading" secondItem="EyD-tC-TkY" secondAttribute="trailing" constant="10" id="oML-cQ-EAh"/>
                                                 <constraint firstAttribute="bottom" secondItem="F0u-Le-qpb" secondAttribute="bottom" constant="12" id="q6V-AH-uU4"/>
                                                 <constraint firstItem="g4N-h6-Z1g" firstAttribute="top" secondItem="cqT-NV-nZd" secondAttribute="top" constant="11" id="qO9-Lv-pcT"/>
                                                 <constraint firstItem="lqM-Q1-k7D" firstAttribute="leading" secondItem="cqT-NV-nZd" secondAttribute="leading" constant="8" id="qQj-QO-mJT"/>
