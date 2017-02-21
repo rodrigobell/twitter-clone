@@ -39,10 +39,10 @@ class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell =  tableView.dequeueReusableCell(withIdentifier: "tweet-cell", for: indexPath) as! TweetTableViewCell
-        cell.selectionStyle = .none
         
-        if let tweet = tweets?[indexPath.row] {
-            cell.tweetText.text = tweet.tweetText
+        if tweets != nil {
+            cell.tweet = tweets?[indexPath.row]
+            cell.selectionStyle = .none
         }
         
         return cell

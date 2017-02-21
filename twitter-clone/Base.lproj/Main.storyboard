@@ -159,7 +159,13 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="favoritesCount" destination="qGF-Yt-VUv" id="QXj-56-wPZ"/>
+                                            <outlet property="retweetCount" destination="F0u-Le-qpb" id="T2q-C2-QsK"/>
                                             <outlet property="tweetText" destination="oos-AS-r6d" id="jBk-yY-v3x"/>
+                                            <outlet property="tweetTimestamp" destination="N6t-57-gSE" id="g41-mH-llK"/>
+                                            <outlet property="userHandle" destination="boS-BM-Lyg" id="4EE-wk-Rqm"/>
+                                            <outlet property="userImage" destination="lqM-Q1-k7D" id="koT-tI-M7N"/>
+                                            <outlet property="userName" destination="EyD-tC-TkY" id="giP-Yr-4M9"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

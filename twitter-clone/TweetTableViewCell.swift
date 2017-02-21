@@ -10,7 +10,20 @@ import UIKit
 
 class TweetTableViewCell: UITableViewCell {
     
+    @IBOutlet weak var userImage: UIImageView!
+    @IBOutlet weak var userName: UILabel!
+    @IBOutlet weak var userHandle: UILabel!
+    @IBOutlet weak var tweetTimestamp: UILabel!
     @IBOutlet weak var tweetText: UILabel!
+    @IBOutlet weak var retweetCount: UILabel!
+    @IBOutlet weak var favoritesCount: UILabel!
+    
+    var tweet: Tweet! {
+        didSet {
+            tweetTimestamp.text = tweet.tweetTimestamp
+            tweetText.text = tweet.tweetText
+        }
+    }
 
     override func awakeFromNib() {
         super.awakeFromNib()
