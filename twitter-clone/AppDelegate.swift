@@ -21,7 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             // Go to the logged in screen
             print("Current user exists: \((User.currentUser?.name)!)")
             
-            let tweetsVC = storyboard.instantiateViewController(withIdentifier: "TweetNavigationViewController")
+            let tweetsVC = storyboard.instantiateViewController(withIdentifier: "TweetsViewController")
             
             window?.rootViewController = tweetsVC
         } else {
@@ -62,9 +62,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
-        print("\(url.description)")
-        
+        // Called when twitter-clone switches from Safari back to twitter-clone. 
         TwitterClient.sharedInstance.handleOpenUrl(url: url)
+        
         return true
     }
 

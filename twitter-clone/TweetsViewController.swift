@@ -20,7 +20,7 @@ class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         tableView.delegate = self
         tableView.dataSource = self
         
-        TwitterClient.sharedInstance.homeTimeline(success: { (tweets) in
+        TwitterClient.sharedInstance.getHomeTimeline(success: { (tweets) in
             self.tweets = tweets
             self.tableView.reloadData()
         }) { (error) in
@@ -40,9 +40,10 @@ class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDa
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell =  tableView.dequeueReusableCell(withIdentifier: "tweet-cell", for: indexPath) as! TweetTableViewCell
         cell.selectionStyle = .none
-        let tweet = tweets![indexPath.row]
         
-        cell.tweetText.text = tweet.tweetText
+        if let tweet = tweets?[indexPath.row] {
+            cell.tweetText.text = tweet.tweetText
+        }
         
         return cell
     }
