@@ -68,12 +68,43 @@ class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 cell.retweetButton.setImage(UIImage(named: "retweet-action-on-green.png"), for: UIControlState())
                 self.tableView.reloadData()
             }
+        } else if retweeted ==  true {
+            TwitterClient.sharedInstance.unretweet(id: path!, params: nil , completion: { (error) -> () in
+                print("Unretweeting")
+                self.tweets![indexPath!.row].retweetCount  = self.tweets![indexPath!.row].retweetCount! - 1
+                tweet.retweeted = false
+                cell.retweetButton.setImage(UIImage(named: "retweet-action-default.png"), for: UIControlState())
+                self.tableView.reloadData()
+            })
         }
-        
     }
 
     @IBAction func onFavoriteButtonTapped(_ sender: Any) {
+        let button = sender as! UIButton
+        let view = button.superview!
+        let cell = view.superview as! TweetTableViewCell
+        let indexPath = tableView.indexPath(for: cell)
+        let tweet = tweets![indexPath!.row]
+        let path = tweet.id
+        let favorited = tweet.favorited
         
+        if favorited == false {
+            TwitterClient.sharedInstance.favorite(id: path!, params: nil) { (error) -> () in
+                print("Favoriting")
+                self.tweets![indexPath!.row].favoriteCount = self.tweets![indexPath!.row].favoriteCount! + 1
+                tweet.favorited = true
+                cell.favoritesButton.setImage(UIImage(named: "like-action-on-red.png"), for: UIControlState())
+                self.tableView.reloadData()
+            }
+        } else if favorited ==  true {
+            TwitterClient.sharedInstance.unfavorite(id: path!, params: nil , completion: { (error) -> () in
+                print("Unfavoriting")
+                self.tweets![indexPath!.row].favoriteCount  = self.tweets![indexPath!.row].favoriteCount! - 1
+                tweet.favorited = false
+                cell.favoritesButton.setImage(UIImage(named: "like-action-off.png"), for: UIControlState())
+                self.tableView.reloadData()
+            })
+        }
     }
 }
 

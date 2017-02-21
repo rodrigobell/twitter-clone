@@ -64,7 +64,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="115"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dnq-U8-SQl" id="cqT-NV-nZd">
-                                            <rect key="frame" x="0.0" y="0.0" width="342" height="114"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="342" height="114.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" text="Tweet content is displayed here" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oos-AS-r6d">
@@ -104,7 +104,7 @@
                                                         <constraint firstAttribute="width" constant="25" id="hkn-fJ-rXD"/>
                                                         <constraint firstAttribute="height" constant="25" id="xeL-0z-p8Q"/>
                                                     </constraints>
-                                                    <state key="normal" title="Button" image="retweet-action_default"/>
+                                                    <state key="normal" title="Button" image="retweet-action-default"/>
                                                     <connections>
                                                         <action selector="onRetweetButtonTapped:" destination="KVU-Ey-5De" eventType="touchUpInside" id="Zpv-vp-a6O"/>
                                                     </connections>
@@ -213,6 +213,6 @@
     </scenes>
     <resources>
         <image name="like-action-off" width="54" height="72"/>
-        <image name="retweet-action_default" width="75" height="72"/>
+        <image name="retweet-action-default" width="75" height="72"/>
     </resources>
 </document>

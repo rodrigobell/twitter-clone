@@ -106,10 +106,60 @@ class TwitterClient: BDBOAuth1SessionManager {
         }, failure: { (operation: URLSessionDataTask?, error: Error!) -> Void in
             print("Couldn't retweet: \(error.localizedDescription)")
             completion(error as NSError?)
+        })
+    }
+    
+    func unretweet(id: Int, params: NSDictionary?, completion: @escaping (_ error: NSError?) -> () ){
+        post("1.1/statuses/unretweet/\(id).json", parameters: params, success: { (operation: URLSessionDataTask!, response: Any?) -> Void in
+            print("Unretweeted tweet with id: \(id)")
+            completion(nil)
+        }, failure: { (operation: URLSessionDataTask?, error: Error?) -> Void in
+            print("Can't unretweet")
+            completion(error as NSError?)
+        })
+    }
+    
+    func favorite(id: Int, params: NSDictionary?, completion: @escaping (_ error: NSError?) -> () ){
+        post("1.1/favorites/create.json?id=\(id)", parameters: params, success: { (operation: URLSessionDataTask!, response: Any?) -> Void in
+            print("Liked tweet with id: \(id)")
+            completion(nil)
+        }, failure: { (operation: URLSessionDataTask?, error: Error?) -> Void in
+            print("Couldn't like tweet")
+            completion(error as NSError?)
+        }
+        )
+    }
+    
+    func unfavorite(id: Int, params: NSDictionary?, completion: @escaping (_ error: NSError?) -> () ){
+        post("1.1/favorites/destroy.json?id=\(id)", parameters: params, success: { (operation: URLSessionDataTask!, response: Any?) -> Void in
+            print("Unliked tweet with id: \(id)")
+            completion(nil)
+        }, failure: { (operation: URLSessionDataTask?, error: Error?) -> Void in
+            print("Couldn't unlike tweet")
+            completion(error as NSError?)
         }
         )
     }
     
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
