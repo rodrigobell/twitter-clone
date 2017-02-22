@@ -112,6 +112,11 @@ class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         }
     }
     
+    @IBAction func onLogoutButtonTapped(_ sender: Any) {
+        User.currentUser?.logout()
+    }
+
+    
     func refreshControlAction(_ refreshControl: UIRefreshControl) {
         TwitterClient.sharedInstance.getHomeTimeline(success: { (tweets) in
             self.tweets = tweets

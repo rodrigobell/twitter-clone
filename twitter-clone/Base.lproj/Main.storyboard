@@ -182,7 +182,11 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="twitter-clone" id="zWg-eZ-qtK">
-                        <barButtonItem key="leftBarButtonItem" title="logout" id="aYt-K5-ftw"/>
+                        <barButtonItem key="leftBarButtonItem" title="logout" id="aYt-K5-ftw">
+                            <connections>
+                                <action selector="onLogoutButtonTapped:" destination="KVU-Ey-5De" id="z3G-AI-TAs"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="ddp-vZ-g38" id="i8o-KB-v4x"/>

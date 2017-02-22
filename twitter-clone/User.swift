@@ -64,4 +64,10 @@ class User: NSObject {
             defaults.synchronize()
         }
     }
+    
+    func logout() {
+        User.currentUser = nil
+        TwitterClient.sharedInstance.requestSerializer.removeAccessToken()
+        NotificationCenter.default.post(name: Notification.Name(rawValue: User.userDidLogoutNotification), object: nil)
+    }
 }

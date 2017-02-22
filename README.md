@@ -18,11 +18,13 @@ The following **optional** features are implemented:
 
 - [ ] User can load more tweets once they reach the bottom of the feed using infinite loading similar to the actual Twitter client.
 - [x] User should be able to unretweet and unfavorite and should decrement the retweet and favorite count.
-- [ ] User can pull to refresh.
+- [x] User can pull to refresh.
 
 The following **additional** features are implemented:
 
-- [ ] List anything else that you can get done to improve the app functionality!
+- [x] The current signed in user can logout from the app.
+- [x] Improve UI.
+    - [x] Auto layout implemented, including auto-resizing table view cells.
 
 Please list two areas of the assignment you'd like to **discuss further with your peers** during the next class (examples include better ways to implement something, how to extend your app in certain ways, etc):
 
