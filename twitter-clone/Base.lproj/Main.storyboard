@@ -22,18 +22,22 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="43b-1R-GKe">
-                                <rect key="frame" x="106" y="434" width="163" height="102"/>
+                                <rect key="frame" x="163" y="316" width="48" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.27881527224299552" green="0.77189406617123535" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                 <state key="normal" title="Login">
-                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="onLoginButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="DUy-qI-eRd"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="iconmonstr-twitter-1-240" translatesAutoresizingMaskIntoConstraints="NO" id="0ZM-6O-3lW">
+                                <rect key="frame" x="163" y="260" width="52" height="48"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.33333333333333331" green="0.77254901960784317" blue="0.9981263279914856" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <connections>
                         <segue destination="AKc-a0-B7O" kind="presentation" identifier="login-segue" id="xkM-nw-gsf"/>
@@ -182,7 +186,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="twitter-clone" id="zWg-eZ-qtK">
-                        <barButtonItem key="leftBarButtonItem" title="logout" id="aYt-K5-ftw">
+                        <barButtonItem key="backBarButtonItem" title="Home" id="JDa-mI-Nsk"/>
+                        <barButtonItem key="leftBarButtonItem" title="Logout" id="aYt-K5-ftw">
+                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <action selector="onLogoutButtonTapped:" destination="KVU-Ey-5De" id="z3G-AI-TAs"/>
                             </connections>
@@ -201,9 +207,14 @@
             <objects>
                 <navigationController storyboardIdentifier="MainNavController" automaticallyAdjustsScrollViewInsets="NO" id="AKc-a0-B7O" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="KBk-ot-vwv">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="KBk-ot-vwv">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="barTintColor" red="0.28049677610397339" green="0.77304798364639282" blue="0.9981263279914856" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -216,6 +227,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="iconmonstr-twitter-1-240" width="240" height="240"/>
         <image name="like-action-off" width="54" height="72"/>
         <image name="retweet-action-default" width="75" height="72"/>
     </resources>
