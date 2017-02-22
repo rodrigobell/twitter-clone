@@ -13,6 +13,7 @@ class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDa
     @IBOutlet weak var tableView: UITableView!
     
     var tweets: [Tweet]? = nil
+    var refreshControl: UIRefreshControl!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,6 +23,10 @@ class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 120
+        
+        refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: #selector(TweetsViewController.refreshControlAction(_:)), for: UIControlEvents.valueChanged)
+        tableView.addSubview(refreshControl)
         
         TwitterClient.sharedInstance.getHomeTimeline(success: { (tweets) in
             self.tweets = tweets
@@ -105,6 +110,16 @@ class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 self.tableView.reloadData()
             })
         }
+    }
+    
+    func refreshControlAction(_ refreshControl: UIRefreshControl) {
+        TwitterClient.sharedInstance.getHomeTimeline(success: { (tweets) in
+            self.tweets = tweets
+            self.tableView.reloadData()
+        }) { (error) in
+            print(error)
+        }
+        refreshControl.endRefreshing()
     }
 }
 
