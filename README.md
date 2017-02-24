@@ -4,6 +4,7 @@ twitter-clone is a basic twitter app to read and compose tweets the [Twitter API
 
 Time spent: **X** hours spent in total
 
+
 ## User Stories
 
 The following **required** functionality is completed:
@@ -22,11 +23,10 @@ The following **optional** features are implemented:
 
 The following **additional** features are implemented:
 
-- [x] The current signed in user can logout from the app.
-- [x] Improve UI.
+- [x] The current signed in user can logout from their account.
+- [x] Improve the UI.
     - [x] Auto layout implemented, including auto-resizing table view cells.
     - [x] Customize navigation bar tint and title/buttons.
-
 Please list two areas of the assignment you'd like to **discuss further with your peers** during the next class (examples include better ways to implement something, how to extend your app in certain ways, etc):
 
 1. Sometimes when tapping favorite button, the favorited image (colored red) will update for other random cells, and not the one that was selected.
