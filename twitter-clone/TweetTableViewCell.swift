@@ -26,7 +26,7 @@ class TweetTableViewCell: UITableViewCell {
             userImage.setImageWith((tweet.user?.profileImageURL!)!)
             userName.text = tweet.user?.name
             userHandle.text = tweet.user?.handle
-            tweetTimestamp.text = tweet.tweetTimestamp!
+            tweetTimestamp.text = calculateTimestamp((tweet!.createdAt?.timeIntervalSinceNow)!)
             tweetText.text = tweet.tweetText
             retweetCount.text = "\(tweet.retweetCount!)"
             favoritesCount.text = "\(tweet.favoriteCount!)"
@@ -37,6 +37,31 @@ class TweetTableViewCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
     }
-
-
+    
+    func calculateTimestamp(_ timeTweetPostedAgo: TimeInterval) -> String {
+        var rawTime = Int(timeTweetPostedAgo)
+        var timeAgo: Int = 0
+        var timeChar = ""
+        
+        rawTime = rawTime * (-1)
+        
+        if (rawTime <= 60) { // SECONDS
+            timeAgo = rawTime
+            timeChar = "s"
+        } else if ((rawTime/60) <= 60) { // MINUTES
+            timeAgo = rawTime/60
+            timeChar = "m"
+        } else if (rawTime/60/60 <= 24) { // HOURS
+            timeAgo = rawTime/60/60
+            timeChar = "h"
+        } else if (rawTime/60/60/24 <= 365) { // DAYS
+            timeAgo = rawTime/60/60/24
+            timeChar = "d"
+        } else if (rawTime/(3153600) <= 1) { // YEARS
+            timeAgo = rawTime/60/60/24/365
+            timeChar = "y"
+        }
+        return "\(timeAgo)\(timeChar)"
+    }
+    
 }

@@ -11,7 +11,7 @@ import UIKit
 class Tweet: NSObject {
     
     var user: User?
-    var tweetTimestamp: String?
+    var createdAt: Date?
     var tweetText: String?
     var retweetCount: Int?
     var favoriteCount: Int?
@@ -26,8 +26,7 @@ class Tweet: NSObject {
         if let timestampUnformatted = dictionary["created_at"] as? String {
             let formatter = DateFormatter()
             formatter.dateFormat = "EEE MMM d HH:mm:ss Z y"
-            let timestampDate = formatter.date(from: timestampUnformatted)
-            tweetTimestamp = formatter.string(from: timestampDate!)
+            createdAt = formatter.date(from: timestampUnformatted)
         }
         
         tweetText = (dictionary["text"] as? String)!
