@@ -31,10 +31,63 @@ class TweetDetailViewController: UIViewController {
         userHandle.text = tweet?.user?.handle!
         tweetText.text = tweet?.tweetText!
         tweetTimestamp.text = tweet?.tweetTimestamp!
-        retweetCount.text = "\(tweet?.retweetCount!)"
-        favoritesCount.text = "\(tweet?.favoriteCount!)"
+        retweetCount.text = "\(tweet!.retweetCount!)"
+        favoritesCount.text = "\(tweet!.favoriteCount!)"
 
         // Do any additional setup after loading the view.
     }
 
+    @IBAction func onRetweetButtonTapped(_ sender: Any) {
+        let path = tweet!.id
+        let retweeted = tweet!.retweeted
+        
+        if retweeted == false {
+            TwitterClient.sharedInstance.retweet(id: path!, params: nil) { (error) -> () in
+                print("Retweeting")
+                self.tweet!.retweetCount = self.tweet!.retweetCount! + 1
+                self.tweet!.retweeted = true
+                self.retweetButton.setImage(UIImage(named: "retweet-action-on-green.png"), for: UIControlState())
+                self.viewDidLoad()
+            }
+        } else if retweeted ==  true {
+            TwitterClient.sharedInstance.unretweet(id: path!, params: nil , completion: { (error) -> () in
+                print("Unretweeting")
+                self.tweet!.retweetCount  = self.tweet!.retweetCount! - 1
+                self.tweet!.retweeted = false
+                self.retweetButton.setImage(UIImage(named: "retweet-action-default.png"), for: UIControlState())
+                self.viewDidLoad()
+            })
+        }
+    }
+    
+    @IBAction func onFavoriteButtonTapped(_ sender: Any) {
+        let path = tweet!.id
+        let favorited = tweet!.favorited
+        
+        if favorited == false {
+            TwitterClient.sharedInstance.favorite(id: path!, params: nil) { (error) -> () in
+                print("Favoriting")
+                self.tweet!.favoriteCount = self.tweet!.favoriteCount! + 1
+                self.tweet!.favorited = true
+                self.favoritesButton.setImage(UIImage(named: "like-action-on-red.png"), for: UIControlState())
+                self.viewDidLoad()
+            }
+        } else if favorited ==  true {
+            TwitterClient.sharedInstance.favorite(id: path!, params: nil , completion: { (error) -> () in
+                print("Unfavoriting")
+                self.tweet!.favoriteCount  = self.tweet!.favoriteCount! - 1
+                self.tweet!.favorited = false
+                self.favoritesButton.setImage(UIImage(named: "like-action-off.png"), for: UIControlState())
+                self.viewDidLoad()
+            })
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier) == "segue-to-reply" {
+            let vc = segue.destination as! ComposeViewController
+            vc.tweet = self.tweet
+            vc.isReply = true
+        }
+    }
 }
