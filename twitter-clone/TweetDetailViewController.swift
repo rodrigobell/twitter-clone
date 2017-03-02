@@ -28,7 +28,7 @@ class TweetDetailViewController: UIViewController {
         
         userImage.setImageWith((tweet?.user?.profileImageURL)!)
         userName.text = tweet?.user?.name!
-        userHandle.text = tweet?.user?.handle!
+        //userHandle.text = tweet.user?.handle!
         tweetText.text = tweet?.tweetText!
         tweetTimestamp.text = calculateTimestamp((tweet!.createdAt?.timeIntervalSinceNow)!)
         retweetCount.text = "\(tweet!.retweetCount!)"
