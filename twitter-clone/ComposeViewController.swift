@@ -27,6 +27,7 @@ class ComposeViewController: UIViewController, UITextViewDelegate {
         
         profileImageView.setImageWith((User._currentUser?.profileImageURL)!)
         profileImageView.layer.cornerRadius = 3
+        profileImageView.clipsToBounds = true
         tweetButton.layer.cornerRadius = 5
         
         if (isReply) == true {

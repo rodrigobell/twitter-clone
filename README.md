@@ -27,6 +27,7 @@ The following **additional** features are implemented:
 - [x] Improve the UI.
     - [x] Auto layout implemented, including auto-resizing table view cells.
     - [x] Customize navigation bar tint and title/buttons.
+
 Please list two areas of the assignment you'd like to **discuss further with your peers** during the next class (examples include better ways to implement something, how to extend your app in certain ways, etc):
 
 1. Sometimes when tapping favorite button, the favorited image (colored red) will update for other random cells, and not the one that was selected.
@@ -36,7 +37,7 @@ Please list two areas of the assignment you'd like to **discuss further with you
 
 Here's a walkthrough of implemented user stories:
 
-<img src='https://github.com/rodrigobell/twitter-clone/blob/master/Assets/demo.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='https://github.com/rodrigobell/twitter-clone/blob/master/Assets/demo1.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
@@ -64,24 +65,24 @@ Describe any challenges encountered while building the app.
 
 # Project 5 - twitter-clone
 
-Time spent: **X** hours spent in total
+Time spent: 15 hours spent in total
 
 ## User Stories
 
 The following **required** functionality is completed:
 
-- [ ] Tweet Details Page: User can tap on a tweet to view it, with controls to retweet, favorite, and reply.
-- [ ] Profile page:
-   - [ ] Contains the user header view
-   - [ ] Contains a section with the users basic stats: # tweets, # following, # followers
-- [ ] Home Timeline: Tapping on a user image should bring up that user's profile page
-- [ ] Compose Page: User can compose a new tweet by tapping on a compose button.
+- [x] Tweet Details Page: User can tap on a tweet to view it, with controls to retweet, favorite, and reply.
+- [x] Profile page:
+   - [x] Contains the user header view
+   - [x] Contains a section with the users basic stats: # tweets, # following, # followers
+- [x] Home Timeline: Tapping on a user image should bring up that user's profile page
+- [x] Compose Page: User can compose a new tweet by tapping on a compose button.
 
 The following **optional** features are implemented:
 
-- [ ] When composing, you should have a countdown in the upper right for the tweet limit.
+- [x] When composing, you should have a countdown in the upper right for the tweet limit. (Implemented in lower left.)
 - [ ] After creating a new tweet, a user should be able to view it in the timeline immediately without refetching the timeline from the network.
-- [ ] Profile Page
+- [x] Profile Page
    - [ ] Implement the paging view for the user description.
    - [ ] As the paging view moves, increase the opacity of the background screen. See the actual Twitter app for this effect
    - [ ] Pulling down the profile page should blur and resize the header image.
@@ -93,18 +94,27 @@ The following **optional** features are implemented:
 
 The following **additional** features are implemented:
 
-- [ ] List anything else that you can get done to improve the app functionality!
+- [x] Tweet timestamp displays interval since tweet was created.
+- [x] Compose/reply screen starts message with @handle of user replying to.
+- [x] User can segue to profile screen from either timeline screen or tweet details screen. 
+- [x] Improve UI.
+   - [x] Added app icon and launch screen.
+   - [x] Auto layout implemented in every screen.
+   - [x] Tweets timeline screen shows twitter icon in nav bar.
+   - [x] Colors and buttons match those of the official Twitter app.
+   - [x] Compose/reply screen tweet button changes color according to whether character count is over or not.
+   - [x] Profile images throughout app have rounded corners.
 
 Please list two areas of the assignment you'd like to **discuss further with your peers** during the next class (examples include better ways to implement something, how to extend your app in certain ways, etc):
 
-1. 
+1. Consider adding tab for logged in user info.
 2. 
 
 ## Video Walkthrough 
 
 Here's a walkthrough of implemented user stories:
 
-<img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='https://github.com/rodrigobell/twitter-clone/blob/master/Assets/demo2.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 

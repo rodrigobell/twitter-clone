@@ -27,8 +27,10 @@ class TweetDetailViewController: UIViewController {
         super.viewDidLoad()
         
         userImage.setImageWith((tweet?.user?.profileImageURL)!)
+        userImage.layer.cornerRadius = 3
+        userImage.clipsToBounds = true
         userName.text = tweet?.user?.name!
-        //userHandle.text = tweet.user?.handle!
+        userHandle.text = tweet?.user?.handle!
         tweetText.text = tweet?.tweetText!
         tweetTimestamp.text = calculateTimestamp((tweet!.createdAt?.timeIntervalSinceNow)!)
         retweetCount.text = "\(tweet!.retweetCount!)"
@@ -114,6 +116,9 @@ class TweetDetailViewController: UIViewController {
             let vc = segue.destination as! ComposeViewController
             vc.tweet = self.tweet
             vc.isReply = true
+        } else if (segue.identifier == "user-profile-segue") {
+            let vc = segue.destination as! ProfileViewController
+            vc.user = self.tweet?.user
         }
     }
 }

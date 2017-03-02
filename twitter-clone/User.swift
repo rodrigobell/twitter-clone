@@ -13,6 +13,7 @@ let currentUserKey = "currentUserKey"
 class User: NSObject {
     var name: String?
     var handle: String?
+    var tagline: String?
     var profileImageURL: URL?
     var bannerImageURL: URL?
     var tagLine: String?
@@ -26,7 +27,7 @@ class User: NSObject {
         
         name = dictionary["name"] as? String
         handle = dictionary["screen_name"] as? String
-        tagLine = dictionary["description"] as? String
+        tagline = dictionary["description"] as? String
         
         let profileImageString = dictionary["profile_image_url"] as? String
         if profileImageString != nil {
@@ -52,7 +53,7 @@ class User: NSObject {
                 let defaults = UserDefaults.standard
                 let userData = defaults.object(forKey: currentUserKey) as? Data
                 
-                if let userData = userData{
+                if let userData = userData {
                     
                     let dictionary = try! JSONSerialization.jsonObject(with: userData, options: .allowFragments)
                     

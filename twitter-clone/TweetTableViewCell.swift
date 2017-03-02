@@ -24,6 +24,8 @@ class TweetTableViewCell: UITableViewCell {
     var tweet: Tweet! {
         didSet {
             userImage.setImageWith((tweet.user?.profileImageURL!)!)
+            userImage.layer.cornerRadius = 3
+            userImage.clipsToBounds = true
             userName.text = tweet.user?.name
             userHandle.text = tweet.user?.handle
             tweetTimestamp.text = calculateTimestamp((tweet!.createdAt?.timeIntervalSinceNow)!)

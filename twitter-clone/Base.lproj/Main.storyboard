@@ -351,9 +351,15 @@
                                     <constraint firstAttribute="height" constant="52" id="T3c-pQ-5rj"/>
                                 </constraints>
                                 <connections>
-                                    <segue destination="Nhm-gS-p4X" kind="show" id="sAO-J7-Bgw"/>
+                                    <segue destination="Nhm-gS-p4X" kind="show" identifier="user-profile-segue" id="sAO-J7-Bgw"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="@rodrigodeobell" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="57c-W2-w4i">
+                                <rect key="frame" x="68" y="98" width="114" height="18"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -383,6 +389,8 @@
                             <constraint firstAttribute="trailingMargin" secondItem="ky6-vn-sxX" secondAttribute="trailing" constant="47" id="add-FD-pE0"/>
                             <constraint firstItem="OrY-FV-CJh" firstAttribute="top" secondItem="fUv-Ur-JHK" secondAttribute="bottom" constant="8" id="aha-jv-3iy"/>
                             <constraint firstAttribute="trailing" secondItem="yVT-hM-1qg" secondAttribute="trailing" constant="7" id="cVR-QD-uyq"/>
+                            <constraint firstItem="57c-W2-w4i" firstAttribute="top" secondItem="OrY-FV-CJh" secondAttribute="bottom" constant="8" id="fAa-gs-RYa"/>
+                            <constraint firstItem="57c-W2-w4i" firstAttribute="leading" secondItem="p27-Lz-9Cy" secondAttribute="trailing" constant="8" id="ffQ-Oy-xjt"/>
                             <constraint firstItem="Who-YD-ffN" firstAttribute="leading" secondItem="eqR-Fn-2WQ" secondAttribute="leading" constant="9" id="gbG-tl-jRh"/>
                             <constraint firstItem="4x3-Eu-EXX" firstAttribute="top" secondItem="ky6-vn-sxX" secondAttribute="bottom" constant="8" id="jzu-U4-rwe"/>
                             <constraint firstAttribute="trailing" secondItem="2gc-G8-QPL" secondAttribute="trailing" constant="8" id="k72-Eb-h02"/>
@@ -401,7 +409,7 @@
                         <outlet property="retweetCount" destination="Who-YD-ffN" id="0Wx-SX-qNl"/>
                         <outlet property="tweetText" destination="2gc-G8-QPL" id="dAZ-ZL-vTa"/>
                         <outlet property="tweetTimestamp" destination="yHz-aB-nzC" id="GgB-oR-Wuk"/>
-                        <outlet property="userHandle" destination="hOa-iB-MEA" id="Hag-Na-X1U"/>
+                        <outlet property="userHandle" destination="57c-W2-w4i" id="1fw-xE-eY3"/>
                         <outlet property="userImage" destination="4CZ-4I-v8T" id="2rw-gK-ZZE"/>
                         <outlet property="userName" destination="OrY-FV-CJh" id="VMP-M2-QrG"/>
                     </connections>
@@ -650,7 +658,7 @@
         <image name="retweet-action-default" width="75" height="72"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="qmW-jO-Kdp"/>
         <segue reference="GP3-eW-3x5"/>
+        <segue reference="sAO-J7-Bgw"/>
     </inferredMetricsTieBreakers>
 </document>
